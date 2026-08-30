@@ -51,6 +51,54 @@ To address this problem, **SMOTE (Synthetic Minority Over-sampling Technique)** 
 
 After applying SMOTE, the training data contained a more balanced number of legitimate and fraudulent transactions.
 
+
+# 🔄 Flowchart
+
+```text
+                    CREDIT CARD DATASET
+                            |
+                            ↓
+                     Load Dataset
+                            |
+                            ↓
+                   Check Dataset
+                            |
+                            ↓
+              Separate Features and Target
+                            |
+                            ↓
+                    Train/Test Split
+                            |
+                 +----------+----------+
+                 |                     |
+                 ↓                     ↓
+          Training Data           Testing Data
+                 |
+                 ↓
+                SMOTE
+                 |
+                 ↓
+        Balanced Training Data
+                 |
+          +------+------+
+          |             |
+          ↓             ↓
+   Random Forest      XGBoost
+          |             |
+          ↓             ↓
+      Train Model    Train Model
+          |             |
+          ↓             ↓
+   Trained RF Model  Trained XGBoost Model
+          |             |
+          +------+------+
+                 |
+                 ↓
+          Future Prediction
+                 |
+                 ↓
+       Legitimate / Fraudulent
+
 The balanced training data used in Week 5 is:
 
 ```python
